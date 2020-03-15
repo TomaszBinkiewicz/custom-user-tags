@@ -1,0 +1,11 @@
+{% extends 'custom_user_tags_app/base.html' %}
+{% block content %}
+    <div class="detail-div">
+        <h2>{{ object.username }}</h2>
+        <p><strong>Last name </strong>{{ object.last_name }}</p>
+        <p><strong>First name </strong>{{ object.first_name }}</p>
+        <p><strong>Email </strong>{{ object.email }}</p>
+        <p><strong>Date of birth </strong>{{ object.birthday }}</p>
+        <p><strong>Random number </strong>{{ object.random_number }}</p>
+    </div>
+{% endblock %}
