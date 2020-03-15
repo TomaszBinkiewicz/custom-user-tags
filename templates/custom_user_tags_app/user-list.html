@@ -13,7 +13,7 @@
             {% for user in users %}
                 <li>
                     <div>
-                        {{ user }}
+                        <a href="{% url 'user-details' user.id %}">{{ user }}</a>
                     </div>
                 </li>
                 {% empty %}
