@@ -1,0 +1,31 @@
+{% extends 'custom_user_tags_app/base.html' %}
+{% block title %}
+    All users list
+{% endblock %}
+
+{% block content %}
+    {% if is_paginated %}
+        {% include 'custom_user_tags_app/paginator.html' with page_obj=users %}
+    {% endif %}
+    <div class="content-list">
+        <h3>Users list</h3>
+        <ul class="user-list">
+            {% for user in users %}
+                <li>
+                    <div>
+                        {{ user }}
+                    </div>
+                </li>
+                {% empty %}
+                <li>
+                    <div>
+                        No users yet.
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% if is_paginated %}
+        {% include 'custom_user_tags_app/paginator.html' with page_obj=users %}
+    {% endif %}
+{% endblock %}
