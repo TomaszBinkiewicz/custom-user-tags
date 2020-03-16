@@ -1,9 +1,10 @@
 # Django app with custom user
 **This is a simple Django application with**
 
-* Extended user model
-* Custom tags
+* extended user model
+* custom tags
 * CRUD views
+* option to download records as a .csv file
 
 ## Endpoints
 
