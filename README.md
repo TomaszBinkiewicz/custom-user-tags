@@ -22,3 +22,13 @@
 
 ### Delete user
 * `/users/delete/<int:id>` - confirmation for deleting user with given id
+
+##Download and run
+**To run this project on Your computer follow these steps**
+* download this repository
+* create virtualenvironment (run `virtualenv venv`)
+* activate virtualenvironment (run `source venv/bin/activate`)
+* install requirements (run `pip install -r requirements.txt` inside project repository)
+* update settings.py file with your SECRET_KEY
+* run `python manage.py migrate`
+* run `python manage.py runserver`
