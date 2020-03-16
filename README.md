@@ -1,3 +1,13 @@
+# Content
+* [Description](#django-app-with-custom-user)
+* [Endpoints](#endpoints)
+    * [Get list of all users](#get-list-of-all-users)
+    * [Create new user](#create-new-user)
+    * [View user details](#view-user-details)
+    * [Update user](#update-user)
+    * [Delete user](#delete-user)
+* [Download and run](#download-and-run)
+
 # Django app with custom user
 **This is a simple Django application with**
 
@@ -23,7 +33,7 @@
 ### Delete user
 * `/users/delete/<int:id>` - confirmation for deleting user with given id
 
-##Download and run
+## Download and run
 **To run this project on Your computer follow these steps**
 * download this repository
 * create virtualenvironment (run `virtualenv venv`)
