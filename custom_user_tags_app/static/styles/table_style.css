@@ -1,9 +1,65 @@
-table {
-    border-collapse: collapse;
+table.users-list {
+    font-family: "Times New Roman", Times, serif;
+    border: 1px solid #FFFFFF;
+    width: 100%;
+    max-height: 200px;
     text-align: left;
+    border-collapse: collapse;
 }
-table td, th {
-    border: 1px solid black;
+
+table.users-list td, table.users-list th {
+    border: 1px solid #FFFFFF;
+    padding: 3px 2px;
     min-width: 100px;
-    padding: 5px;
+}
+
+table.users-list td {
+    font-size: 17px;
+}
+
+table.users-list td a {
+    text-decoration: none;
+    color: blue;
+}
+
+table.users-list tr:nth-child(even) {
+    background: #D0E4F5;
+}
+
+table.users-list thead {
+    background: #0B6FA4;
+    border-bottom: 5px solid #FFFFFF;
+}
+
+table.users-list thead th {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #FFFFFF;
+}
+
+table.users-list thead th:first-child {
+    border-left: none;
+}
+
+.paginator {
+    text-align: right;
+}
+
+a {
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+div.form-div ,
+div.detail-div,
+div.link-div {
+    margin: auto;
+    text-align: center;
+}
+
+.helptext {
+    display: block;
+    color: gray;
 }

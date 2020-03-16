@@ -4,9 +4,13 @@ from datetime import date
 from random import randint
 
 
+def get_random_number():
+    return randint(1, 100)
+
+
 class User(AbstractUser):
     birthday = models.DateField()
-    random_number = models.IntegerField(default=randint(1, 100))
+    random_number = models.IntegerField(default=get_random_number)
 
     @property
     def age(self):
