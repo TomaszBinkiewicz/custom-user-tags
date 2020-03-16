@@ -1,7 +1,7 @@
 # Django app with custom user
-**This is a Django with**
+**This is a simple Django application with**
 
-* Custom user model
+* Extended user model
 * Custom tags
 * CRUD views
 
