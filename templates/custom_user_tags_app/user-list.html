@@ -5,7 +5,7 @@
 
 {% block content %}
     {% if is_paginated %}
-        {% include 'custom_user_tags_app/paginator.html' with page_obj=users %}
+        {% include 'custom_user_tags_app/paginator.html' with page_obj=page_obj %}
     {% endif %}
     <div class="content-list">
         <h3>Users list</h3>
@@ -26,6 +26,6 @@
         </ul>
     </div>
     {% if is_paginated %}
-        {% include 'custom_user_tags_app/paginator.html' with page_obj=users %}
+        {% include 'custom_user_tags_app/paginator.html' with page_obj=page_obj %}
     {% endif %}
 {% endblock %}

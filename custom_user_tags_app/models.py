@@ -14,6 +14,6 @@ class User(AbstractUser):
         delta_days = (today - self.birthday).days
         return int(delta_days / 365.242199)
 
-    def __init__(self, *args, **kwargs):
-        models.Model.__init__(self, *args, **kwargs)
+    def save(self, *args, **kwargs):
+        super(User, self).save(self, *args, **kwargs)
         self.random_number = randint(1, 100)
