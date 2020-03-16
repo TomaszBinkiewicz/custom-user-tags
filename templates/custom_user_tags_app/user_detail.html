@@ -8,4 +8,7 @@
         <p><strong>Date of birth </strong>{{ object.birthday }}</p>
         <p><strong>Random number </strong>{{ object.random_number }}</p>
     </div>
+    <div class="link-div">
+        <a href="{% url 'user-update' user.id %}">edit</a>
+    </div>
 {% endblock %}

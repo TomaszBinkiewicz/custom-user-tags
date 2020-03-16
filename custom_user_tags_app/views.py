@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
+from django.forms import DateInput
 from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
+                                  UpdateView,
                                   )
 from .models import User
-from django.forms import DateInput
 
 
 class UserListView(ListView):
@@ -29,3 +30,10 @@ class UserCreateView(CreateView):
         form = super(UserCreateView, self).get_form(form_class)
         form.fields['birthday'].widget = DateInput(format='%d-%m-%Y', attrs={'type': 'date'})
         return form
+
+
+class UserUpdateView(UpdateView):
+    model = User
+    fields = ['username', 'first_name', 'last_name', 'email', 'birthday']
+    template_name = 'custom_user_tags_app/user_update_form.html'
+    success_url = reverse_lazy('users-list')
