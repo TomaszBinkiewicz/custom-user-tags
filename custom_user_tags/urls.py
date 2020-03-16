@@ -5,6 +5,7 @@ from custom_user_tags_app.views import (UserListView,
                                         UserCreateView,
                                         UserUpdateView,
                                         UserDeleteView,
+                                        download_csv,
                                         )
 
 urlpatterns = [
@@ -14,4 +15,5 @@ urlpatterns = [
     path('users/add', UserCreateView.as_view(), name='user-add'),
     path('users/edit/<int:pk>', UserUpdateView.as_view(), name='user-update'),
     path('users/delete/<int:pk>', UserDeleteView.as_view(), name='user-delete'),
+    path('users/download', download_csv, name='download-csv'),
 ]

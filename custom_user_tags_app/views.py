@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.http import FileResponse, HttpResponse
 from django.urls import reverse_lazy
 from django.forms import DateInput
 from django.views.generic import (ListView,
@@ -8,6 +8,9 @@ from django.views.generic import (ListView,
                                   DeleteView,
                                   )
 from .models import User
+from .utils import create_csv_file
+from custom_user_tags.settings import BASE_DIR
+from os import path
 
 
 class UserListView(ListView):
@@ -44,3 +47,10 @@ class UserUpdateView(UpdateView):
 class UserDeleteView(DeleteView):
     model = User
     success_url = reverse_lazy('users-list')
+
+
+def download_csv(request):
+    users = User.objects.all()
+    create_csv_file(users)
+    file_path = path.join(BASE_DIR, 'custom_user_tags_app/static/csv/users.csv')
+    return FileResponse(open(file_path, 'rb'), filename='users.csv', as_attachment=True)

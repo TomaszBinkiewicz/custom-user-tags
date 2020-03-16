@@ -44,7 +44,12 @@
             {% endfor %}
         </table>
     </div>
-    <a href="{% url 'user-add' %}">add user</a>
+    <div>
+        <a href="{% url 'user-add' %}">add user</a>
+    </div>
+    <div>
+        <a href="{% url 'download-csv' %}" target="_blank">download as csv</a>
+    </div>
     {% if is_paginated %}
         {% include 'custom_user_tags_app/paginator.html' with page_obj=page_obj %}
     {% endif %}
