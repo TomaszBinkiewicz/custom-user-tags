@@ -5,6 +5,7 @@ from django.views.generic import (ListView,
                                   DetailView,
                                   CreateView,
                                   UpdateView,
+                                  DeleteView,
                                   )
 from .models import User
 
@@ -36,4 +37,9 @@ class UserUpdateView(UpdateView):
     model = User
     fields = ['username', 'first_name', 'last_name', 'email', 'birthday']
     template_name = 'custom_user_tags_app/user_update_form.html'
+    success_url = reverse_lazy('users-list')
+
+
+class UserDeleteView(DeleteView):
+    model = User
     success_url = reverse_lazy('users-list')

@@ -7,9 +7,11 @@
             Custom user project
         {% endblock %}
     </title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/table_style.css' %}">
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
+{% block content %}
+{% endblock %}
 </body>
 </html>

@@ -1,4 +1,5 @@
 {% extends 'custom_user_tags_app/base.html' %}
+{% load custom_tags %}
 {% block title %}
     All users list
 {% endblock %}
@@ -9,21 +10,40 @@
     {% endif %}
     <div class="content-list">
         <h3>Users list</h3>
-        <ul class="user-list">
+        <table>
+            <tr>
+                <th>Username</th>
+                <th>Birthday</th>
+                <th>Eligible</th>
+                <th>Random number</th>
+                <th>BizzFuzz</th>
+            </tr>
             {% for user in users %}
-                <li>
-                    <div>
-                        <a href="{% url 'user-details' user.id %}">{{ user }}</a>
-                    </div>
-                </li>
-                {% empty %}
+                <tr>
+                    <td>
+                        <a href="{% url 'user-details' user.id %}">{{ user.username }}</a>
+                    </td>
+                    <td>
+                        {{ user.birthday }}
+                    </td>
+                    <td>
+                        {% pg_13 user %}
+                    </td>
+                    <td>
+                        {{ user.random_number }}
+                    </td>
+                    <td>
+                        {# bizzfuzz tag #}
+                    </td>
+                </tr>
+            {% empty %}
                 <li>
                     <div>
                         No users yet.
                     </div>
                 </li>
             {% endfor %}
-        </ul>
+        </table>
     </div>
     {% if is_paginated %}
         {% include 'custom_user_tags_app/paginator.html' with page_obj=page_obj %}
